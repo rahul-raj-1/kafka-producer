@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: local
+---
+spring:
+  profiles: local
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092,localhost:9093,localhost:9094
+      properties:
+        acks: all
+        retries: 4
+        retry.backoff.ms: 10000
